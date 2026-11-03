@@ -16,5 +16,6 @@
   "action": {
     "default_popup": "index.html",
     "default_title": "LexiCard"
-  }
+  },
+  "host_permissions": ["http://localhost:8000/*"]
 }
