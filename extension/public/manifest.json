@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+
+  "name": "LexiCard - AI Vocabulary Companion",
+
+  "version": "1.0.0",
+
+  "description": "Learn new English words with AI-powered vocabulary flashcards.",
+
+  "permissions": ["contextMenus", "storage"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "LexiCard"
+  }
+}
