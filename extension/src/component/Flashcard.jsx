@@ -10,7 +10,9 @@ function Flashcard({ flashcard }) {
 
   const word = typeof flashcard.word === "string" ? flashcard.word : "";
   const partOfSpeech =
-    typeof flashcard.part_of_speech === "string" ? flashcard.part_of_speech : "";
+    typeof flashcard.part_of_speech === "string"
+      ? flashcard.part_of_speech
+      : "";
   const pronunciation =
     typeof flashcard.pronunciation === "string" ? flashcard.pronunciation : "";
   const definition =
@@ -62,9 +64,16 @@ function Flashcard({ flashcard }) {
       });
 
       const link = document.createElement("a");
-      const safeWord = word.replace(/[^a-z0-9]/gi, "_").slice(0, 40) || "word";
 
-      link.download = `LexiCard_${safeWord}.png`;
+      // Generate a safe filename using the vocabulary word.
+      const safeWord =
+        word
+          .trim()
+          .replace(/[^a-z0-9_-]/gi, "_")
+          .slice(0, 40) || "word";
+
+      // Download using the vocabulary word as the filename.
+      link.download = `${safeWord}.png`;
       link.href = dataUrl;
       link.click();
     } catch (error) {
@@ -113,7 +122,9 @@ function Flashcard({ flashcard }) {
               <span className="example-context">
                 {typeof example?.context === "string" ? example.context : ""}
               </span>
-              <p>{typeof example?.sentence === "string" ? example.sentence : ""}</p>
+              <p>
+                {typeof example?.sentence === "string" ? example.sentence : ""}
+              </p>
             </div>
           ))}
         </div>
@@ -131,7 +142,7 @@ function Flashcard({ flashcard }) {
         </div>
 
         <div className="memory-tip">
-          <h3> Memory Tip</h3>
+          <h3>Memory Tip</h3>
           <p>{memoryTip}</p>
         </div>
       </div>
@@ -166,7 +177,9 @@ function Flashcard({ flashcard }) {
                   {typeof example?.context === "string" ? example.context : ""}
                 </span>
                 <p>
-                  {typeof example?.sentence === "string" ? example.sentence : ""}
+                  {typeof example?.sentence === "string"
+                    ? example.sentence
+                    : ""}
                 </p>
               </div>
             ))}
