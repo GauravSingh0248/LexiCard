@@ -1,76 +1,118 @@
 .flashcard {
   margin-top: 20px;
-  padding: 20px;
-  background: #ffffff;
-  border: 1px solid #e8e7f0;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(30, 20, 70, 0.06);
+  padding: 22px;
+  background: linear-gradient(145deg, #f5e9cc, #eadbb9);
+  color: #302033;
+  border: 2px solid #b18b50;
+  border-radius: 14px;
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.3),
+    inset 0 0 25px rgba(128, 91, 40, 0.08);
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .flashcard-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #eeeef3;
+  border-bottom: 1px solid #b18b50;
+}
+
+.word-title-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
 }
 
 .flashcard-word {
   margin: 0;
   font-size: 25px;
-  color: #27223b;
+  color: #481d35;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.pronunciation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid #b18b50;
+  border-radius: 50%;
+  background: #eadbb9;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.pronunciation-button:hover {
+  background: #dfc58f;
+  transform: scale(1.08);
+}
+
+.pronunciation-button:active {
+  transform: scale(0.95);
 }
 
 .flashcard-pos {
   display: inline-block;
-  margin-top: 6px;
-  padding: 4px 9px;
-  background: #f0edff;
-  color: #7052d9;
-  border-radius: 6px;
+  margin-top: 7px;
+  padding: 4px 10px;
+  background: #ead5a5;
+  color: #672b43;
+  border: 1px solid #c6a66c;
+  border-radius: 5px;
   font-size: 11px;
   text-transform: capitalize;
 }
 
 .flashcard-pronunciation {
-  color: #77738a;
+  color: #725b50;
   font-size: 12px;
   margin-top: 8px;
+  font-style: italic;
 }
 
 .flashcard-section {
-  margin-top: 18px;
+  margin-top: 19px;
 }
 
 .flashcard-section h3,
 .memory-tip h3 {
-  margin: 0 0 8px;
-  color: #39344d;
-  font-size: 14px;
+  margin: 0 0 9px;
+  color: #692c43;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Georgia, serif;
 }
 
 .flashcard-section p,
 .memory-tip p {
   margin: 0;
-  color: #666276;
+  color: #51413c;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .example-item {
-  margin-top: 12px;
-  padding: 10px;
-  background: #f8f7fc;
+  margin-top: 11px;
+  padding: 12px;
+  background: rgba(255, 250, 235, 0.75);
+  border: 1px solid #dfc58f;
   border-radius: 9px;
 }
 
 .example-context {
   display: inline-block;
   margin-bottom: 6px;
-  color: #7052d9;
+  color: #853c56;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .synonyms-list {
@@ -81,8 +123,9 @@
 
 .synonym-tag {
   padding: 6px 10px;
-  background: #f0edff;
-  color: #7052d9;
+  background: #ead5a5;
+  color: #672b43;
+  border: 1px solid #c6a66c;
   border-radius: 20px;
   font-size: 12px;
 }
@@ -90,7 +133,145 @@
 .memory-tip {
   margin-top: 20px;
   padding: 13px;
-  background: #fff9e9;
-  border: 1px solid #f5e9c5;
+  background: #f7e7b9;
+  border: 1px solid #c6a66c;
   border-radius: 10px;
+}
+
+/* =================================
+   DOWNLOAD BUTTON
+================================= */
+
+.download-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: linear-gradient(135deg, #6e263e, #492038);
+  color: #f5e9cc;
+  border: 1px solid #b18b50;
+  border-radius: 9px;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.download-button:hover {
+  background: linear-gradient(135deg, #85314c, #60264b);
+  transform: translateY(-2px);
+}
+
+.download-button:active {
+  transform: translateY(0);
+}
+
+/* =================================
+   HIDDEN EXPORT CARD
+   Separate styles for PNG generation
+================================= */
+
+.export-container {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 600px;
+  pointer-events: none;
+}
+
+.export-card {
+  width: 600px;
+  padding: 45px;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, #f5e9cc, #eadbb9);
+  color: #302033;
+  border: 2px solid #b18b50;
+  border-radius: 16px;
+  box-shadow: inset 0 0 30px rgba(128, 91, 40, 0.08);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.export-header {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #b18b50;
+}
+
+.export-header h1 {
+  margin: 0 0 12px;
+  font-size: 42px;
+  font-weight: bold;
+  color: #481d35;
+  text-transform: capitalize;
+}
+
+.export-header span {
+  display: inline-block;
+  padding: 7px 15px;
+  background: #ead5a5;
+  color: #672b43;
+  border: 1px solid #c6a66c;
+  border-radius: 6px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.export-section {
+  margin-top: 30px;
+}
+
+.export-section h3 {
+  margin: 0 0 14px;
+  color: #692c43;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.export-section p {
+  margin: 0;
+  color: #51413c;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.export-example {
+  margin-top: 16px;
+  padding: 18px;
+  background: rgba(255, 250, 235, 0.75);
+  border: 1px solid #dfc58f;
+  border-radius: 12px;
+}
+
+.export-example span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #853c56;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.export-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 35px;
+  padding-top: 18px;
+  border-top: 1px solid #b18b50;
+  color: #725b50;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #ead5a5;
+  border: 1px solid #c6a66c;
+  color: #672b43;
+  font-size: 15px;
+  text-decoration: none;
 }

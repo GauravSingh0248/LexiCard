@@ -31,3 +31,7 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
+
+
+# Security documentation
+SECURITY.md
