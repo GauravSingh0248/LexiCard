@@ -519,19 +519,47 @@ Do not use the Vite/Uvicorn reload development servers as a production deploymen
 
 ---
 
-## 27. License
 
-No project license file is currently present in the repository root. Add a `LICENSE` before making distribution claims (MIT, Apache-2.0, etc.). Until then, default copyright remains with the author.
+## 27 Security Policy
 
----
+## Supported Versions
 
-## 28. Security Vulnerability Reporting
+LexiCard is currently under active development. Security updates will be applied to the latest maintained version.
 
-If you discover a security issue:
+| Version | Supported |
+|---------|-----------|
+| Latest development version | Yes |
+| Older versions | No |
 
-1. **Do not** open a public GitHub issue with exploit details.
-2. Email the maintainer privately (repository owner contact / GitHub security advisory).
-3. Include steps to reproduce, impact, and affected versions.
-4. Allow reasonable time for remediation before public disclosure.
+## Reporting a Vulnerability
 
-Please rotate any exposed secrets immediately and review [`docs/SECURITY_AUDIT_REPORT.md`](docs/SECURITY_AUDIT_REPORT.md).
+If you discover a security vulnerability in LexiCard, please report it responsibly.
+
+**Please do not disclose security vulnerabilities publicly through GitHub Issues.**
+
+Instead:
+
+1. Contact the repository owner privately through GitHub.
+2. Navigate to the repository's **Security** tab and use **Report a vulnerability** if private vulnerability reporting is enabled.
+3. Include a clear description of the vulnerability, its potential impact, and steps to reproduce it.
+4. If possible, include relevant screenshots or proof-of-concept details.
+
+## Response Process
+
+- Reports will be reviewed as soon as reasonably possible.
+- Valid vulnerabilities will be investigated and prioritized.
+- Security fixes will be implemented where necessary.
+- Reporters will be informed when appropriate.
+
+## Security Best Practices
+
+When contributing to or using LexiCard:
+
+- Never commit `.env` files or API credentials.
+- Keep the Groq API key exclusively on the backend.
+- Never expose backend secrets in the Chrome extension.
+- Validate and sanitize incoming user input.
+- Keep project dependencies updated.
+- Do not share sensitive information in public bug reports.
+
+Thank you for helping keep LexiCard secure.
